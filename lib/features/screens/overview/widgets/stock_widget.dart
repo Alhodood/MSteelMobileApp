@@ -42,12 +42,12 @@ class StockWidget extends StatelessWidget {
                       width: 40,
                       height: 56,
                       decoration: BoxDecoration(
-                        color: chocolateMelange,
+                        color: Colors.teal.shade100,
                         borderRadius: BorderRadius.circular(12.0),
                       ),
                       child: const Icon(
                         Icons.data_exploration_rounded,
-                        color: primaryColor,
+                        color: Colors.teal,
                         size: 30.0,
                       ),
                     ),

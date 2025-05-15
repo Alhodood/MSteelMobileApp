@@ -28,8 +28,8 @@ class CustomButton extends StatelessWidget {
             begin: Alignment.bottomRight,
             end: Alignment.topLeft,
             colors: [
-              primaryColor,
-              secondPrimaryColor,
+              Colors.teal,
+              Colors.tealAccent,
             ],
           ),
         ),

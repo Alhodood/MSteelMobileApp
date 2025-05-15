@@ -5,7 +5,7 @@ class CourseCard extends StatelessWidget {
   const CourseCard({
     super.key,
     required this.title,
-    this.color = const Color(0xFF7553F6),
+    this.color = const Color(0xFF008080), // Teal
     this.iconSrc = "assets/icons/ios.svg",
   });
 
@@ -19,7 +19,7 @@ class CourseCard extends StatelessWidget {
       height: 280,
       width: 260,
       decoration: BoxDecoration(
-        color: color,
+        color: color.withOpacity(0.9),
         borderRadius: const BorderRadius.all(Radius.circular(30)),
       ),
       child: Row(
@@ -33,21 +33,22 @@ class CourseCard extends StatelessWidget {
                   Text(
                     title,
                     style: Theme.of(context).textTheme.titleLarge!.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.w600),
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600),
                   ),
-                  const Padding(
+                 const Padding(
                     padding: EdgeInsets.only(top: 12, bottom: 8),
                     child: Text(
-                      "Build and animate an iOS app from scratch",
+                      "Learn to maintain and monitor industrial systems effectively",
                       style: TextStyle(
-                        color: Colors.white38,
+                        color: Color(0xFFB2DFDB), // Light Teal
                       ),
                     ),
                   ),
                   const Text(
-                    "61 SECTIONS - 11 HOURS",
+                    "32 MODULES - 8 HOURS",
                     style: TextStyle(
-                      color: Colors.white38,
+                      color: Color(0xFFB2DFDB), // Light Teal
                     ),
                   ),
                   const Spacer(),

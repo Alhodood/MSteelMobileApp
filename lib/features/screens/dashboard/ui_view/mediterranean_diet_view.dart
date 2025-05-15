@@ -271,8 +271,7 @@ class MediterranesnDietView extends StatelessWidget {
                                         ),
                                         border: new Border.all(
                                             width: 4,
-                                            color: FitnessAppTheme
-                                                .nearlyDarkBlue
+                                            color: Colors.teal
                                                 .withOpacity(0.2)),
                                       ),
                                       child: Column(
@@ -290,8 +289,7 @@ class MediterranesnDietView extends StatelessWidget {
                                               fontWeight: FontWeight.normal,
                                               fontSize: 24,
                                               letterSpacing: 0.0,
-                                              color: FitnessAppTheme
-                                                  .nearlyDarkBlue,
+                                              color: Colors.teal,
                                             ),
                                           ),
                                           Text(
@@ -316,7 +314,7 @@ class MediterranesnDietView extends StatelessWidget {
                                     child: CustomPaint(
                                       painter: CurvePainter(
                                           colors: [
-                                            FitnessAppTheme.nearlyDarkBlue,
+                                            Colors.teal,
                                             HexColor("#8A98E8"),
                                             HexColor("#8A98E8")
                                           ],

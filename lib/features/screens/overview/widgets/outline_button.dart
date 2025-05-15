@@ -23,15 +23,15 @@ class CustomOutlineButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(12.0),
           border: Border.all(
             width: 2.0,
-            color: const Color(0xFFCD5D37),
+            color: Colors.teal,
           ),
         ),
         child:  Center(
           child: Text(
             title,
-            style: const TextStyle(
+            style: TextStyle(
               fontSize: 15.0,
-              color: Color(0xFFCD5D37),
+              color: Colors.teal,
             ),
           ),
         ),

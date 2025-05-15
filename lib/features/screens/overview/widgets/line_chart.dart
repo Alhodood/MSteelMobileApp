@@ -13,10 +13,10 @@ class LineChartWidget extends StatefulWidget {
 
 class _LineChartWidgetState extends State<LineChartWidget> {
   List<Color> gradientColors = [
-    royalFuchsia,
-    primaryColor,
-    royalFuchsia,
-    primaryColor,
+    Colors.teal,
+    Colors.tealAccent,
+    Colors.teal.shade300,
+    Colors.teal.shade400,
   ];
 
   bool showAvg = false;

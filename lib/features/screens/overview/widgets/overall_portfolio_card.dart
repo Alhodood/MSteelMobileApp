@@ -15,7 +15,7 @@ class OverallPortfolioCard extends StatelessWidget {
     return Container(
       // Removed transform for mobile-friendliness
       width: double.infinity,
-     // margin: const EdgeInsets.symmetric(horizontal: 16),
+      // margin: const EdgeInsets.symmetric(horizontal: 16),
       padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 22.0),
       decoration: BoxDecoration(
         color: lightBlack.withOpacity(0.9),
@@ -25,7 +25,7 @@ class OverallPortfolioCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const Text(
-            'System Maintenance Overview',
+            'System Maintenance',
             style: TextStyle(
               fontSize: 18.0,
               fontWeight: FontWeight.w600,
@@ -49,16 +49,7 @@ class OverallPortfolioCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          const Wrap(
-            spacing: 12,
-            runSpacing: 12,
-            children: [
-              TotalWidget(),
-              
-              
-              
-            ],
-          ),
+          const Wrap(spacing: 12, runSpacing: 12, children: [TotalWidget()]),
         ],
       ),
     );

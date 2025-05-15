@@ -15,6 +15,9 @@ class SignInForm extends StatefulWidget {
 }
 
 class _SignInFormState extends State<SignInForm> {
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
+
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool isShowLoading = false;
   bool isShowConfetti = false;
@@ -64,10 +67,19 @@ class _SignInFormState extends State<SignInForm> {
               Future.delayed(const Duration(seconds: 1), () {
                 // Navigator.pop(context);
                 if (!context.mounted) return;
+                String role = "";
+                if (emailController.text.trim() == "admin@gmail.com") {
+                  role = "admin";
+                } else if (emailController.text.trim() == "user@gmail.com") {
+                  role = "user";
+                } else {
+                  role = "guest";
+                }
+
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const EntryPoint(),
+                    builder: (context) => EntryPoint(role: role),
                   ),
                 );
               });
@@ -101,12 +113,13 @@ class _SignInFormState extends State<SignInForm> {
               const Text(
                 "Email",
                 style: TextStyle(
-                  color: Colors.black54,
+                  color: Colors.teal,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 16),
                 child: TextFormField(
+                  controller: emailController,
                   validator: (value) {
                     if (value!.isEmpty) {
                       return "";
@@ -118,7 +131,7 @@ class _SignInFormState extends State<SignInForm> {
                   decoration: InputDecoration(
                     prefixIcon: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: SvgPicture.asset("assets/icons/email.svg"),
+                      child: Icon(Icons.email, color: Colors.teal),
                     ),
                   ),
                 ),
@@ -126,12 +139,13 @@ class _SignInFormState extends State<SignInForm> {
               const Text(
                 "Password",
                 style: TextStyle(
-                  color: Colors.black54,
+                  color: Colors.teal,
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 8, bottom: 16),
                 child: TextFormField(
+                  controller: passwordController,
                   obscureText: true,
                   validator: (value) {
                     if (value!.isEmpty) {
@@ -142,7 +156,7 @@ class _SignInFormState extends State<SignInForm> {
                   decoration: InputDecoration(
                     prefixIcon: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 8),
-                      child: SvgPicture.asset("assets/icons/password.svg"),
+                      child: Icon(Icons.lock, color: Colors.teal),
                     ),
                   ),
                 ),
@@ -154,7 +168,7 @@ class _SignInFormState extends State<SignInForm> {
                     singIn(context);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFF77D8E),
+                    backgroundColor: Colors.teal,
                     minimumSize: const Size(double.infinity, 56),
                     shape: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.only(
@@ -167,7 +181,7 @@ class _SignInFormState extends State<SignInForm> {
                   ),
                   icon: const Icon(
                     CupertinoIcons.arrow_right,
-                    color: Color(0xFFFE0037),
+                    color: Colors.white,
                   ),
                   label: const Text("Sign In"),
                 ),

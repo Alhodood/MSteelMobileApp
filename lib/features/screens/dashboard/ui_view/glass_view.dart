@@ -33,7 +33,7 @@ class GlassView extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 16),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: HexColor("#D7E0F9"),
+                            color: Colors.teal.shade100,
                             borderRadius: BorderRadius.only(
                                 topLeft: Radius.circular(8.0),
                                 bottomLeft: Radius.circular(8.0),
@@ -59,8 +59,7 @@ class GlassView extends StatelessWidget {
                                     fontWeight: FontWeight.w500,
                                     fontSize: 14,
                                     letterSpacing: 0.0,
-                                    color: FitnessAppTheme.nearlyDarkBlue
-                                        .withOpacity(0.6),
+                                    color: Colors.black,
                                   ),
                                 ),
                               ),

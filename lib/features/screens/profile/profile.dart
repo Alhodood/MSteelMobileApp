@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:msteelmobileapp/features/screens/home/logs_screen.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -74,22 +75,35 @@ class Profile extends StatelessWidget {
                                 ),
                                 Row(
                                   children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius: BorderRadius.circular(20),
-                                        border: Border.all(
-                                          color: Colors.black54,
+                                    GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder:
+                                                (context) => const LogsScreen(),
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(
+                                            20,
+                                          ),
+                                          border: Border.all(
+                                            color: Colors.black54,
+                                          ),
                                         ),
-                                      ),
-                                      padding: const EdgeInsets.symmetric(
-                                        vertical: 9,
-                                        horizontal: 12,
-                                      ),
-                                      child: const Text(
-                                        "VIEW LOGS",
-                                        style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          fontSize: 15,
+                                        padding: const EdgeInsets.symmetric(
+                                          vertical: 9,
+                                          horizontal: 12,
+                                        ),
+                                        child: const Text(
+                                          "VIEW LOGS",
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 15,
+                                          ),
                                         ),
                                       ),
                                     ),

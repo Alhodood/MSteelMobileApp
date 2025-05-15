@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:msteelmobileapp/features/screens/dashboard/dashboard_main.dart';
 import 'package:msteelmobileapp/features/screens/dashboard/my_diary_screen.dart';
 import 'package:msteelmobileapp/features/screens/overview/overview.dart';
-import 'package:msteelmobileapp/features/screens/home/home_screen.dart';
+import 'package:msteelmobileapp/features/screens/home/logs_screen.dart';
 import 'package:msteelmobileapp/features/screens/profile/profile.dart';
 import 'package:msteelmobileapp/features/screens/projects/component/home_page.dart';
 import 'package:msteelmobileapp/features/screens/projects/component/profile_page.dart';
@@ -83,7 +83,7 @@ List<Menu> bottomNavItems = [
       artboard: "CHAT",
       stateMachineName: "CHAT_Interactivity",
     ),
-    screen: HomePage(),
+    screen: LogsScreen(),
   ),
   Menu(
     title: "Search",
@@ -129,5 +129,83 @@ List<Menu> bottomNavItems = [
       stateMachineName: "USER_Interactivity",
     ),
     screen:DashboardMainScreen(),
+  ),
+];
+
+List<Menu> adminBottomNavItems = [
+  Menu(
+    title: "Dashboard",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "HOME",
+      stateMachineName: "HOME_Interactivity",
+    ),
+    screen: DashboardMainScreen(),
+  ),
+   Menu(
+    title: "Project",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "BELL",
+      stateMachineName: "BELL_Interactivity",
+    ),
+    screen: ProjectHomePage(),
+  ),
+  Menu(
+    title: "Reports",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "TIMER",
+      stateMachineName: "TIMER_Interactivity",
+    ),
+    screen:  OverviewScreen(),
+  ),
+  Menu(
+    title: "Employees",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "USER",
+      stateMachineName: "USER_Interactivity",
+    ),
+    screen: EmployeePage(),
+  ),
+   Menu(
+    title: "Profile",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "SETTINGS",
+      stateMachineName: "SETTINGS_Interactivity",
+    ),
+    screen: Profile(),
+  ),
+];
+
+List<Menu> userBottomNavItems = [
+  Menu(
+    title: "My Logs",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "HOME",
+      stateMachineName: "HOME_Interactivity",
+    ),
+    screen: DashboardMainScreen(),
+  ),
+  // Menu(
+  //   title: "Overview",
+  //   rive: RiveModel(
+  //     src: "assets/RiveAssets/icons.riv",
+  //     artboard: "TIMER",
+  //     stateMachineName: "TIMER_Interactivity",
+  //   ),
+  //   screen: OverviewScreen(),
+  // ),
+  Menu(
+    title: "Profile",
+    rive: RiveModel(
+      src: "assets/RiveAssets/icons.riv",
+      artboard: "USER",
+      stateMachineName: "USER_Interactivity",
+    ),
+    screen: Profile(),
   ),
 ];

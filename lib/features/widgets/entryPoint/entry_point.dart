@@ -2,9 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:msteelmobileapp/core/constants/constants.dart';
+
 import 'package:msteelmobileapp/core/utils/rive_utils.dart';
-import 'package:msteelmobileapp/features/screens/home/home_screen.dart';
+import 'package:msteelmobileapp/features/screens/home/logs_screen.dart';
 import 'package:rive/rive.dart';
+
 
 import '../../model/menu.dart';
 import 'components/btm_nav_item.dart';
@@ -12,7 +14,8 @@ import 'components/menu_btn.dart';
 import 'components/side_bar.dart';
 
 class EntryPoint extends StatefulWidget {
-  const EntryPoint({super.key});
+  final String role;
+  const EntryPoint({super.key, required this.role});
 
   @override
   State<EntryPoint> createState() => _EntryPointState();
@@ -22,7 +25,9 @@ class _EntryPointState extends State<EntryPoint>
     with SingleTickerProviderStateMixin {
   bool isSideBarOpen = false;
 
-  Menu selectedBottonNav = bottomNavItems.first;
+  late List<Menu> bottomNavItems;
+
+  late Menu selectedBottonNav;
   Menu selectedSideMenu = sidebarMenus.first;
 
   late SMIBool isMenuOpenInput;
@@ -45,6 +50,9 @@ class _EntryPointState extends State<EntryPoint>
 
   @override
   void initState() {
+    bottomNavItems = widget.role == 'admin' ? adminBottomNavItems : userBottomNavItems;
+    selectedBottonNav = bottomNavItems.first;
+
     _animationController = AnimationController(
       vsync: this,
       duration: const Duration(milliseconds: 200),
@@ -106,7 +114,7 @@ class _EntryPointState extends State<EntryPoint>
                   child: IndexedStack(
                     index: bottomNavItems.indexOf(selectedBottonNav),
                     children: bottomNavItems
-                        .map((menu) => menu.screen ?? const HomePage())
+                        .map((menu) => menu.screen ?? const LogsScreen())
                         .toList(),
                   ),
                 ),
@@ -178,7 +186,9 @@ class _EntryPointState extends State<EntryPoint>
                   return BtmNavItem(
                     navBar: navBar,
                     press: () {
-                      RiveUtils.chnageSMIBoolState(navBar.rive.status!);
+                      if (navBar.rive.status != null) {
+                        RiveUtils.chnageSMIBoolState(navBar.rive.status!);
+                      }
                       setState(() {
                         updateSelectedBtmNav(navBar);
                       });

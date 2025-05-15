@@ -72,7 +72,7 @@ class _OnbodingScreenState extends State<OnbodingScreen> {
                       child: Column(
                         children: [
                           Text(
-                            "Welcome to MSteel App",
+                            "Welcome to MSteel",
                             style: TextStyle(
                               fontSize: 50,
                               fontWeight: FontWeight.w700,

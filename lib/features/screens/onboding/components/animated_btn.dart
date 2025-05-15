@@ -31,11 +31,15 @@ class AnimatedBtn extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const Icon(CupertinoIcons.arrow_right),
+                  const Icon(CupertinoIcons.arrow_right, color: Colors.teal),
                   const SizedBox(width: 8),
                   Text(
                     "Explore MSteel App",
-                    style: Theme.of(context).textTheme.labelLarge,
+                    style: const TextStyle(
+                      color: Colors.teal,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
                   )
                 ],
               ),

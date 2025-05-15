@@ -74,12 +74,12 @@ class BodyMeasurementView extends StatelessWidget {
                                     child: Text(
                                       '1540',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: FitnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w600,
-                                        fontSize: 32,
-                                        color: FitnessAppTheme.nearlyDarkBlue,
-                                      ),
+                                  style: TextStyle(
+                                    fontFamily: FitnessAppTheme.fontName,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 32,
+                                    color: Colors.teal,
+                                  ),
                                     ),
                                   ),
                                   Padding(
@@ -88,13 +88,13 @@ class BodyMeasurementView extends StatelessWidget {
                                     child: Text(
                                       'kg Load',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: FitnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 18,
-                                        letterSpacing: -0.2,
-                                        color: FitnessAppTheme.nearlyDarkBlue,
-                                      ),
+                                    style: TextStyle(
+                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 18,
+                                      letterSpacing: -0.2,
+                                      color: Colors.teal,
+                                    ),
                                     ),
                                   ),
                                 ],
@@ -137,13 +137,13 @@ class BodyMeasurementView extends StatelessWidget {
                                     child: Text(
                                       'Auto Sensor A1',
                                       textAlign: TextAlign.center,
-                                      style: TextStyle(
-                                        fontFamily: FitnessAppTheme.fontName,
-                                        fontWeight: FontWeight.w500,
-                                        fontSize: 12,
-                                        letterSpacing: 0.0,
-                                        color: FitnessAppTheme.nearlyDarkBlue,
-                                      ),
+                                    style: TextStyle(
+                                      fontFamily: FitnessAppTheme.fontName,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                      letterSpacing: 0.0,
+                                      color: Colors.teal,
+                                    ),
                                     ),
                                   ),
                                 ],

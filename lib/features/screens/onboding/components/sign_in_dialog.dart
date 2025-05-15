@@ -17,7 +17,7 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
           margin: const EdgeInsets.symmetric(horizontal: 16),
           padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 24),
           decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.95),
+            color: Colors.white,
             borderRadius: BorderRadius.circular(40),
             boxShadow: [
               BoxShadow(
@@ -33,7 +33,7 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
             ],
           ),
           child: Scaffold(
-            // backgroundColor: Colors.transparent,
+             backgroundColor: Colors.transparent,
             body: Stack(
               clipBehavior: Clip.none,
               children: [
@@ -46,39 +46,41 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
                           fontSize: 34,
                           fontFamily: "Poppins",
                           fontWeight: FontWeight.w600,
+                          color: Colors.teal,
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 16),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
                         child: Text(
                           "Experience the power of MSteel – a professionally maintained application built to streamline your workflows and operations efficiently.",
                           textAlign: TextAlign.center,
+                          style: TextStyle(color: Colors.teal.shade800),
                         ),
                       ),
                       const SignInForm(),
-                      const Row(
+                      Row(
                         children: [
                           Expanded(
-                            child: Divider(),
+                            child: Divider(color: Colors.teal.shade100),
                           ),
                           Padding(
-                            padding: EdgeInsets.symmetric(horizontal: 16),
+                            padding: const EdgeInsets.symmetric(horizontal: 16),
                             child: Text(
                               "OR",
                               style: TextStyle(
-                                color: Colors.black26,
+                                color: Colors.teal.shade200,
                                 fontWeight: FontWeight.w500,
                               ),
                             ),
                           ),
-                          Expanded(child: Divider()),
+                          Expanded(child: Divider(color: Colors.teal.shade100)),
                         ],
                       ),
                       const Padding(
                         padding: EdgeInsets.symmetric(vertical: 24),
                         child: Text(
                           "Sign up with Email, Apple or Google",
-                          style: TextStyle(color: Colors.black54),
+                          style: TextStyle(color: Colors.teal),
                         ),
                       ),
                       Row(
@@ -122,11 +124,11 @@ void showCustomDialog(BuildContext context, {required ValueChanged onValue}) {
                   bottom: -48,
                   child: CircleAvatar(
                     radius: 16,
-                    backgroundColor: Colors.white,
+                    backgroundColor: Colors.teal,
                     child: Icon(
                       Icons.close,
                       size: 20,
-                      color: Colors.black,
+                      color: Colors.white,
                     ),
                   ),
                 )

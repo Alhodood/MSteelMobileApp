@@ -9,11 +9,9 @@ import 'package:msteelmobileapp/features/screens/projects/data/model/task_data.d
 class ProjectHomePage extends StatelessWidget {
   const ProjectHomePage({super.key});
 
- 
-
   @override
   Widget build(BuildContext context) {
-     Size size = MediaQuery.of(context).size;
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
@@ -42,21 +40,18 @@ class ProjectHomePage extends StatelessWidget {
               children: [
                 ///title name and icon
                 Padding(
-                  padding: const EdgeInsets.only(bottom: kDefault),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Maintenance Projects Dashboard",
-                        style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                          fontWeight: FontWeight.bold,
-                        ),
+                  padding: const EdgeInsets.only(top: 32.0, bottom: kDefault),
+                  child: Center(
+                    child: Text(
+                      "Maintenance Projects",
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleLarge?.copyWith(
+                        fontWeight: FontWeight.bold,
                       ),
-                      const Icon(Icons.date_range, color: Colors.blueAccent),
-                    ],
+                    ),
                   ),
                 ),
-      
+
                 ///date card
                 SizedBox(
                   height: size.height * .11,
@@ -72,12 +67,12 @@ class ProjectHomePage extends StatelessWidget {
               ],
             ),
           ),
-      
+
           Expanded(
             child: Column(
               children: [
                 SizedBox(height: 40),
-      
+
                 ///progress card
                 Container(
                   width: size.width * .9,
@@ -138,7 +133,7 @@ class ProjectHomePage extends StatelessWidget {
                   ),
                 ),
                 SizedBox(height: 12),
-      
+
                 ///list task
                 Expanded(
                   child: Center(

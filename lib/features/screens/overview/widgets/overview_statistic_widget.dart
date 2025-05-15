@@ -5,9 +5,7 @@ import 'package:msteelmobileapp/core/utils/media_query_values.dart';
 import 'line_chart.dart';
 
 class OverviewStatistic extends StatefulWidget {
-  const OverviewStatistic({
-    super.key,
-  });
+  const OverviewStatistic({super.key});
 
   @override
   State<OverviewStatistic> createState() => _OverviewStatisticState();
@@ -20,10 +18,7 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
     return Container(
       width: double.infinity,
       // height: context.height * 0.24,
-      padding: const EdgeInsets.symmetric(
-        vertical: 16.0,
-        horizontal: 22.0,
-      ),
+      padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 22.0),
       decoration: BoxDecoration(
         color: lightBlack,
         borderRadius: BorderRadius.circular(25.0),
@@ -34,7 +29,7 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
           Row(
             children: [
               const Text(
-                'System Maintenance Overview',
+                'Customer Maintenance',
                 style: TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.w600,
@@ -47,27 +42,13 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                 color: darkGrey,
                 size: 15.0,
               ),
-              SizedBox(
-                width: context.width * 0.01,
-              ),
-              const Icon(
-                Icons.star,
-                color: primaryColor,
-                size: 15.0,
-              ),
-              SizedBox(
-                width: context.width * 0.01,
-              ),
-              const Icon(
-                Icons.settings,
-                color: darkGrey,
-                size: 15.0,
-              ),
+              SizedBox(width: context.width * 0.01),
+              const Icon(Icons.star, color: primaryColor, size: 15.0),
+              SizedBox(width: context.width * 0.01),
+              const Icon(Icons.settings, color: darkGrey, size: 15.0),
             ],
           ),
-          SizedBox(
-            height: context.height * 0.025,
-          ),
+          SizedBox(height: context.height * 0.025),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -83,27 +64,20 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                     ),
                     child: const Icon(
                       Icons.data_exploration_rounded,
-                      color: primaryColor,
+                      color: Colors.teal,
                       size: 30.0,
                     ),
                   ),
-                  SizedBox(
-                    width: context.width * 0.01,
-                  ),
+                  SizedBox(width: 20),
                   Column(
                     mainAxisSize: MainAxisSize.min,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       const Text(
                         'App Maintenance Service (AMS)',
-                        style: TextStyle(
-                          color: darkGrey,
-                          fontSize: 12.0,
-                        ),
+                        style: TextStyle(color: darkGrey, fontSize: 12.0),
                       ),
-                      SizedBox(
-                        height: context.height * 0.01,
-                      ),
+                      SizedBox(height: context.height * 0.01),
                       Row(
                         mainAxisSize: MainAxisSize.min,
                         children: [
@@ -113,14 +87,10 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                             children: [
                               Text(
                                 'Hours:',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
+                                style: Theme.of(context).textTheme.bodySmall!
                                     .copyWith(color: Colors.grey),
                               ),
-                              SizedBox(
-                                width: context.width * 0.001,
-                              ),
+                              SizedBox(width: context.width * 0.001),
                               const Text(
                                 '186.5',
                                 style: TextStyle(
@@ -131,9 +101,7 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                               ),
                             ],
                           ),
-                          SizedBox(
-                            width: context.width * 0.009,
-                          ),
+                          SizedBox(width: context.width * 0.009),
                           Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -142,14 +110,10 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                                 color: Colors.green,
                                 size: 15.0,
                               ),
-                              SizedBox(
-                                width: context.width * 0.001,
-                              ),
+                              SizedBox(width: context.width * 0.001),
                               Text(
                                 '+1.8%',
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .bodySmall!
+                                style: Theme.of(context).textTheme.bodySmall!
                                     .copyWith(color: Colors.green),
                               ),
                             ],
@@ -160,9 +124,7 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                   ),
                 ],
               ),
-              SizedBox(
-                height: context.height * 0.015,
-              ),
+              SizedBox(height: context.height * 0.015),
               Container(
                 width: context.width * 1,
                 height: context.height * 0.09,
@@ -179,7 +141,11 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
                           .map(
                             (e) => Padding(
                               padding: const EdgeInsets.only(right: 8.0),
-                              child: _lastTimeWidget(context, _times.indexOf(e), e),
+                              child: _lastTimeWidget(
+                                context,
+                                _times.indexOf(e),
+                                e,
+                              ),
                             ),
                           )
                           .toList(),
@@ -201,24 +167,22 @@ class _OverviewStatisticState extends State<OverviewStatistic> {
       decoration: BoxDecoration(
         color: lightBlack,
         borderRadius: BorderRadius.circular(12.0),
-        gradient: index == 2
-            ? const LinearGradient(
-                begin: Alignment.bottomRight,
-                end: Alignment.topLeft,
-                colors: [
-                  primaryColor,
-                  secondPrimaryColor,
-                ],
-              )
-            : null,
+        gradient:
+            index == 2
+                ? const LinearGradient(
+                  begin: Alignment.bottomRight,
+                  end: Alignment.topLeft,
+                  colors: [Colors.teal, Colors.tealAccent],
+                )
+                : null,
       ),
       child: Center(
         child: Text(
           time,
           style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                color: index == 2 ? Colors.white : darkGrey,
-                fontSize: 15.0,
-              ),
+            color: index == 2 ? Colors.white : darkGrey,
+            fontSize: 15.0,
+          ),
         ),
       ),
     );
