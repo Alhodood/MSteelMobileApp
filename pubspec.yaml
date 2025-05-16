@@ -37,6 +37,9 @@ dependencies:
   flutter_custom_carousel: ^0.1.0+1
   flutter_svg: ^2.1.0
   flutter_card_swiper: ^7.0.2
+  provider: ^6.1.2
+  image_picker: ^1.1.2
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:

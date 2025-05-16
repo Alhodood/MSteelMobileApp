@@ -113,7 +113,7 @@ class _ExamplePageState extends State<EcpolyessListView> {
 
 
   List<Container> cards = List.generate(data.length, (index){
-    return Container(decoration: BoxDecoration(color: Colors.blue,borderRadius: BorderRadius.all(Radius.circular(30))),
+    return Container(decoration: BoxDecoration(color: data[index]['color'],borderRadius: BorderRadius.all(Radius.circular(30))),
       // alignment: Alignment.center,
       child: Padding(
                     padding: const EdgeInsets.all(16),
@@ -180,27 +180,25 @@ class _ExamplePageState extends State<EcpolyessListView> {
 
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: CardSwiper(
-        controller: controller,
-        cardsCount: cards.length,
-        onSwipe: _onSwipe,
-        onUndo: _onUndo,
-        numberOfCardsDisplayed: 3,
-        backCardOffset: const Offset(40, 40),
-        padding: const EdgeInsets.all(24.0),
-        cardBuilder: (
-          context,
-          index,
-          horizontalThresholdPercentage,
-          verticalThresholdPercentage,
-        ) =>
-            GestureDetector(onTap: () =>     Navigator.push(
-    context,
-    MaterialPageRoute(builder: (context) =>  ServiceListingScreen(image:data[index])),
-  ),
-              child: cards[index]),
+    return CardSwiper(
+      controller: controller,
+      cardsCount: cards.length,
+      onSwipe: _onSwipe,
+      onUndo: _onUndo,
+      numberOfCardsDisplayed: 3,
+      backCardOffset: const Offset(40, 40),
+      padding: const EdgeInsets.all(24.0),
+      cardBuilder: (
+        context,
+        index,
+        horizontalThresholdPercentage,
+        verticalThresholdPercentage,
+      ) =>
+          GestureDetector(onTap: () =>     Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) =>  ServiceListingScreen(image:data[index])),
       ),
+            child: cards[index]),
     );
   }
 
@@ -227,25 +225,32 @@ class _ExamplePageState extends State<EcpolyessListView> {
   }
 }
 
- List<Map<String, String>> data = [
+ List<Map<String, dynamic>> data = [
   {
     "Title": "Machine Cleaning",
     "Description": "Clean the internal and external parts of machinery.",
-    "image": "assets/machine_one.png"
+    "image": "assets/machine_one.png",
+    "color":Colors.red
   },
   {
     "Title": "Valve Inspection",
     "Description": "Inspect the valve for leaks and corrosion.",
-    "image": "assets/pngegg (5).png"
+    "image": "assets/pngegg (5).png",
+        "color":Colors.green
+
   },
   {
     "Title": "Oil Replacement",
     "Description": "Replace used oil to ensure machine efficiency.",
-    "image": "assets/pngegg (6) (2).png"
+    "image": "assets/pngegg (6) (2).png",
+            "color":Colors.yellow
+
   },
   {
     "Title": "Filter Maintenance",
     "Description": "Check and replace filters in machinery.",
-    "image": "assets/pngegg (8) (1).png"
+    "image": "assets/pngegg (8) (1).png",
+            "color":Colors.red
+
   },
 ];
