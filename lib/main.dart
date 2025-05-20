@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:msteelmobileapp/features/screens/onboding/onboding_screen.dart';
+import 'package:provider/provider.dart';
+
+import 'features/screens/employess/controller/employees_controller.dart';
 
 
 void main() {
@@ -12,27 +15,33 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'The Flutter Way',
-      theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFFEEF1F8),
-        primarySwatch: Colors.blue,
-        fontFamily: "Intel",
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: ElevatedButton.styleFrom(foregroundColor: Colors.white),
+    return MultiProvider(providers: [
+              ChangeNotifierProvider(create: (context) => EmployeesController()),
+
+      
+    ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'The Flutter Way',
+        theme: ThemeData(
+          scaffoldBackgroundColor: const Color(0xFFEEF1F8),
+          primarySwatch: Colors.blue,
+          fontFamily: "Intel",
+          elevatedButtonTheme: ElevatedButtonThemeData(
+            style: ElevatedButton.styleFrom(foregroundColor: Colors.white),
+          ),
+          inputDecorationTheme: const InputDecorationTheme(
+            filled: true,
+            fillColor: Colors.white,
+            errorStyle: TextStyle(height: 0),
+            border: defaultInputBorder,
+            enabledBorder: defaultInputBorder,
+            focusedBorder: defaultInputBorder,
+            errorBorder: defaultInputBorder,
+          ),
         ),
-        inputDecorationTheme: const InputDecorationTheme(
-          filled: true,
-          fillColor: Colors.white,
-          errorStyle: TextStyle(height: 0),
-          border: defaultInputBorder,
-          enabledBorder: defaultInputBorder,
-          focusedBorder: defaultInputBorder,
-          errorBorder: defaultInputBorder,
-        ),
+        home: const OnbodingScreen(),
       ),
-      home: const OnbodingScreen(),
     );
   }
 }

@@ -37,7 +37,12 @@ dependencies:
   rive: ^0.13.12
   flutter_svg: ^2.0.10
   fl_chart: ^0.66.0
-  
+
+  flutter_custom_carousel: ^0.1.0+1
+  flutter_card_swiper: ^7.0.2
+  provider: ^6.1.2
+  image_picker: ^1.1.2
+  lottie: ^2.7.0
 
 dev_dependencies:
   flutter_test:
@@ -68,6 +73,9 @@ flutter:
     - assets/icons/
     - assets/RiveAssets/
     - assets/fitness_app/
+    - assets/employe/
+  #   - images/a_dot_ham.jpeg
+
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

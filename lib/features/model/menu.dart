@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:msteelmobileapp/features/screens/dashboard/dashboard_main.dart';
 import 'package:msteelmobileapp/features/screens/dashboard/my_diary_screen.dart';
+import 'package:msteelmobileapp/features/screens/employess/screen/employes_dashboard.dart';
 import 'package:msteelmobileapp/features/screens/overview/overview.dart';
 import 'package:msteelmobileapp/features/screens/home/logs_screen.dart';
 import 'package:msteelmobileapp/features/screens/profile/profile.dart';
@@ -188,7 +189,7 @@ List<Menu> userBottomNavItems = [
       artboard: "HOME",
       stateMachineName: "HOME_Interactivity",
     ),
-    screen: DashboardMainScreen(),
+    screen: SignUp(),
   ),
   // Menu(
   //   title: "Overview",
